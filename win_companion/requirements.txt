@@ -1,0 +1,16 @@
+fastapi==0.162.2
+uvicorn==0.54.0
+
+# Windows media session + album art (PyWinRT 4.x; requires Python >= 3.11)
+winrt-runtime==4.1.0
+winrt-Windows.Media.Control==4!10.0.28000.2957
+winrt-Windows.Storage.Streams==4!10.0.28000.2957
+
+# System master volume
+pycaw==20260927
+comtypes>=1.4.8
+psutil>=7.0
+
+# System tray
+pystray==0.19.5
+Pillow==13.0.0

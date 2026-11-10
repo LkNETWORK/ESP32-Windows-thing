@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>ESP32 Media Controller</title>
+  <link rel="icon" type="image/png" href="/assets/no_info.png">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main id="stage" class="stage" aria-label="Media controller">
+    <header class="topbar">
+      <div class="status">
+        <span id="connection-dot" class="dot" aria-hidden="true"></span>
+        <span id="connection-label">Connecting…</span>
+      </div>
+      <div id="source" class="source"></div>
+    </header>
+
+    <section class="player" aria-live="polite">
+      <div id="art-frame" class="art-frame">
+        <img id="art" class="art" alt="" hidden>
+        <div id="art-placeholder" class="art-placeholder" aria-hidden="true">
+          <img src="/assets/no_info.png" alt="">
+        </div>
+      </div>
+
+      <div class="meta">
+        <h1 id="title" class="title">Nothing playing</h1>
+        <p id="artist" class="artist"></p>
+        <p id="album" class="album"></p>
+      </div>
+
+      <div class="progress-block" id="progress-block" hidden>
+        <div class="progress" aria-hidden="true">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <div class="times">
+          <span id="elapsed">0:00</span>
+          <span id="duration">--:--</span>
+        </div>
+      </div>
+
+      <div class="volume-block">
+        <div class="volume-heading">
+          <span>Volume</span>
+          <span id="volume-label">—</span>
+        </div>
+        <div class="volume-bar" aria-hidden="true">
+          <div id="volume-fill" class="volume-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <p class="hint">Tap: play/pause · Swipe ← →: tracks · Swipe ↑ ↓: volume</p>
+    <div id="osd" class="osd" aria-live="polite" aria-hidden="true"></div>
+  </main>
+  <noscript>This controller requires JavaScript to handle touch gestures.</noscript>
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>
